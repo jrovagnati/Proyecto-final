@@ -1,0 +1,14 @@
+<!-- productos/templates/productos/finalizar_compra.html -->
+
+{% extends 'productos/base.html' %}
+
+{% block title %}Finalizar Compra{% endblock %}
+
+{% block content %}
+    <h2>Finalizar Compra</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>¿Desea confirmar la compra?</p>
+        <button type="submit">Confirmar</button>
+    </form>
+{% endblock %}

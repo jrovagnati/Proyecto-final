@@ -1,0 +1,14 @@
+<!-- productos/templates/productos/agregar_producto.html -->
+
+{% extends 'productos/base.html' %}
+
+{% block title %}Agregar Producto{% endblock %}
+
+{% block content %}
+    <h2>Agregar Producto</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agregar</button>
+    </form>
+{% endblock %}

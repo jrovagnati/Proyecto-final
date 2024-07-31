@@ -1,0 +1,14 @@
+<!-- productos/templates/productos/mostrar_productos.html -->
+
+{% extends 'productos/base.html' %}
+
+{% block title %}Productos{% endblock %}
+
+{% block content %}
+    <h2>Productos</h2>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.nombre }} - {{ producto.marca.nombre }} - ${{ producto.precio }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

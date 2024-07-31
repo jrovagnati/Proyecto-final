@@ -1,0 +1,20 @@
+<!-- productos/templates/productos/buscar_producto.html -->
+
+{% extends 'productos/base.html' %}
+
+{% block title %}Buscar Producto{% endblock %}
+
+{% block content %}
+    <h2>Buscar Producto</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if producto %}
+        <h3>Producto Encontrado:</h3>
+        <p>{{ producto.nombre }} - {{ producto.marca.nombre }} - ${{ producto.precio }}</p>
+    {% endif %}
+{% endblock %}
